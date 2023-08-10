@@ -1,13 +1,20 @@
-const express = require('express');
-const bcrypt = require('bcrypt-nodejs');
-const cors = require('cors');
-const knex = require('knex');
+// const express = require('express');
+import express from "express";
+// const bcrypt = require('bcrypt-nodejs');
+import bcrypt from "bcrypt-nodejs";
+// const cors = require('cors');
+import cors from "cors";
+// const knex = require('knex');
+import knex from "knex";
 
 // const register = require('./controllers/register');
 import handleRegister from "./controllers/register.js";
-const signin = require('./controllers/signin');
-const profile = require('./controllers/profile');
-const image = require('./controllers/image');
+// const signin = require('./controllers/signin');
+import signin from ".controllers/signin";
+// const profile = require('./controllers/profile');
+import profile from "./controllers/profile";
+// const image = require('./controllers/image');
+import image from "./controllers/image";
 
 const db = knex({
     client: 'pg',
