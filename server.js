@@ -1,36 +1,26 @@
-// const express = require('express');
-import express from "express";
-// const bcrypt = require('bcrypt-nodejs');
-import bcrypt from "bcrypt-nodejs";
-// const cors = require('cors');
-import cors from "cors";
-// const knex = require('knex');
-import knex from "knex";
-
-// const register = require('./controllers/register');
-import handleRegister from "./controllers/register.js";
-// const signin = require('./controllers/signin');
-import signin from ".controllers/signin";
-// const profile = require('./controllers/profile');
-import profile from "./controllers/profile";
-// const image = require('./controllers/image');
-import image from "./controllers/image";
-
+const express = require('express');
+const bcrypt = require('bcrypt-nodejs');
+const cors = require('cors');
+const knex = require('knex');
 const db = knex({
-    client: 'pg',
-    connection: {
-      connectionString : process.env.DATABASE_URL,
-      ssl: { rejectUnauthorized: false },
-      host : process.env.DATABASE_HOST,
-      port : process.env.PORT,
-      user : process.env.DATABASE_USER,
-      password : process.env.DATABASE_PW,
-      database : process.env.DATABASE_DB
-    }
-  });
+  client: 'pg',
+  connection: {
+    connectionString : process.env.DATABASE_URL,
+    host : process.env.DATABASE_HOST,
+    port : process.env.PORT,
+    user : process.env.DATABASE_USER,
+    password : process.env.DATABASE_PW,
+    database : process.env.DATABASE_DB
+  }
+});
+
+// Controllers
+const register = require('./controllers/register');
+const signin = require('./controllers/signin');
+const profile = require('./controllers/profile');
+const image = require('./controllers/image');
 
 const app = express();
-
 app.use(express.json());
 app.use(cors());
 
