@@ -32,5 +32,3 @@
 module.exports = {
     handleRegister: handleRegister
 };
-
-// export default handleRegister; 
