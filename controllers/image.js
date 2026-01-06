@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 const returnClarifaiRequestOptions = (imageUrl) => {
     const PAT = 'e440847d64324e8795c896895d997099';
     const USER_ID = 'jasonjamesmoore';       
